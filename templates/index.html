@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .post-title {
+            color: #e96789;
+            cursor: pointer;
+        }
+        .post-title:hover {
+            text-decoration: underline;
+        }
+        .intro {
+            margin-bottom: 30px;
+        }
+        .centered-content {
+    text-align: center; /* Center-aligns the text */
+    margin: 0 auto; /* Centers the container */
+    max-width: 80%; /* Optionally limit the max width of the container */
+}
+
+body {
+    background-color: #121212; /* Dark background */
+    color: white; /* Text color */
+    font-family: 'Courier New', monospace; /* Typewriter font */
+}
+
+    </style>
+</head>
+<body>
+    <div class="centered-content">
+        <h1>Hellooo💫</h1>
+        <p>This webpage is a tiny self-made and long-term project by me.
+            This blog is updated sometimes if I remember I ever did this project.
+            Whatever, have fun guys.</p>
+            <p>-- Sammy --</p>
+        
+        <ul>
+            <!-- Blog posts will be listed here -->
+        </ul>
+    </div>
+    <div class="centered-content">
+     <h2>Blog Posts</h2>
+     </div>
+     <br>
+     <br>
+     <ul>
+        {% for post in posts %}
+            <li><a class="post-title" href="{{ url_for('post', filename=post.filename) }}">{{ post.title }}</a></li>
+        {% endfor %}
+     </ul>
+    </body>
+</body>
+</html>
